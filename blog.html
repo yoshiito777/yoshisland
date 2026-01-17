@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Yoshi's Blog | SpaceHey Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e9f0f5; /* Color azulino de fondo */
+            font-family: 'Gaegu', cursive;
+            margin: 0;
+        }
+        /* Barra superior azul de SpaceHey */
+        .navbar {
+            background-color: #0366d6;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a { color: white; text-decoration: none; margin: 0 15px; }
+
+        .container {
+            display: flex; /* AQUÍ SE CREAN LAS COLUMNAS */
+            max-width: 900px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        /* Columna Izquierda (Pequeña) */
+        .left-col {
+            flex: 1;
+            background: white;
+            border: 1px solid #0366d6;
+            padding: 15px;
+            text-align: center;
+        }
+        .left-col img { width: 100%; border-radius: 5px; }
+
+        /* Columna Derecha (Grande para el Blog) */
+        .right-col {
+            flex: 2;
+        }
+
+        .blog-post {
+            background: white;
+            border: 1px solid #0366d6;
+            margin-bottom: 20px;
+        }
+        .blog-header {
+            background: #b9d4ec;
+            padding: 5px 10px;
+            font-weight: bold;
+            color: #0366d6;
+        }
+        .blog-content { padding: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">⬅ Volver a la Isla</a> | <b>Mi Blog de SpaceHey</b>
+    </div>
+
+    <div class="container">
+        <aside class="left-col">
+            <h3>Yoshiito777</h3>
+            <img src="imagenes/laios.png" alt="Foto perfil">
+            <p>"Comiendo salmón 24/7"</p>
+            <hr>
+            <p><b>Género:</b> Dinosaurio<br><b>Ubicación:</b> Yoshisland</p>
+        </aside>
+
+        <main class="right-col">
+            <div class="blog-post">
+                <div class="blog-header">17 de Enero, 2026 - ¡Mi nueva página!</div>
+                <div class="blog-content">
+                    <p>Hola a todos, hoy logré configurar mis archivos en GitHub. ¡Estoy muy feliz! jeje.</p>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-header">Pensamientos del día</div>
+                <div class="blog-content">
+                    <p>Estaba pensando que el salmón es la mejor comida del mundo. ¿Ustedes qué opinan? lol lmao.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
