@@ -5,130 +5,147 @@
   <title>Yoshisland :3</title>
   <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
   <style>
-    /* --- Estilos generales --- */
     body {
       margin: 0;
-      font-family: 'Gaegu', cursive; /* ahora todo el text usa gaegu */
-      background-color:#2A7953; /* color de fondo suave */
+      padding: 0;
+      font-family: 'Gaegu', cursive;
+      background-image: url('imagenes/cow.jpeg'); 
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      /* Color de texto base más grande */
+      font-size: 1.3em; 
       color: #222;
     }
-  
-    header h1 {
-  font-family: 'Gaegu', cursive;
-}
 
-section h2 {
-  font-family: 'Gaegu', cursive;
-}
-
-    /* Encabezado */
-    header {
-      background-color: #ffcc80; /* fondo naranja suave */
+    /* 1. BARRA AZUL (Actualizada con verde oscuro de tu paleta #2F6D20) */
+    .navbar {
+      background-color: #2F6D20; 
+      color: white;
+      padding: 15px;
       text-align: center;
-      padding: 50px 20px;
-      border-bottom: 2px solid #ffb74d;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
+    .navbar a { 
+      color: #ffffff; 
+      text-decoration: none; 
+      margin: 0 20px; 
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .navbar a:hover { color: #E88B12; } /* Naranja de la paleta al pasar el mouse */
 
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      color: #b25000;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-
-    /* Secciones */
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 25px 20px;
-      background-color: #ffffff;
-     border: 4px outset #ffffff; /* crea el efectoo relieve 3d*/
-     background-color: #c0c0c0; /* el gris clasic de window viejo*/
-
-    }
-
-    section h2 {
-      margin-top: 0;
-      color: #b25000;
-    }
-
-    section p {
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    /* Imágenes */
-    img {
-      max-width: 250px;
-      display: block;
-      margin: 15px auto;
-      border-radius: 8px;
-    }
-header img {
-    max-width: 390px;
-}
-    /* Imagen "Sobre mí" más grande */
-    section#sobre-mi img {
-      max-width: 400px;
-    }
-section#intereses img {
-    max-width: 450px;
-}
-    /* Pie de página */
-    footer {
-      text-align: center;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 20px;
-      margin-top: 40px;
-      background-color: #ffcc80;
-      border-top: 2px solid #ffb74d;
-      color: #b25000;
+    }
+
+    /* TÍTULO PRINCIPAL (Letra más grande y color naranja #E88B12) */
+    .main-title {
+      text-align: center;
+      color: #E88B12; 
+      text-shadow: 2px 2px 0px #463F23; /* Sombra café oscuro de tu paleta */
+      font-size: 4.5em; /* Título bien grande */
+      margin: 20px 0;
+    }
+
+    .wrapper-columnas {
+      display: flex;
+      gap: 25px;
+    }
+
+    .columna-izq { flex: 1; }
+    .columna-der { flex: 2; }
+
+    /* SECCIONES TRANSPARENTES (Bordes con verde olivo #66972A) */
+    section {
+      background-color: rgba(255, 255, 255, 0.88);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      border: 4px solid #66972A; /* Verde olivo de la imagen */
+      box-shadow: 5px 5px 0px rgba(70, 63, 35, 0.2); /* Sombra café */
+    }
+
+    /* Títulos de secciones con verde azulado #468A65 */
+    section h2 { 
+      margin-top: 0; 
+      color: #468A65; 
+      font-size: 2em;
+      border-bottom: 2px solid #E88B12;
+    }
+
+    p { line-height: 1.4; } /* Espaciado entre líneas para que sea más fácil leer */
+
+    img { 
+      max-width: 100%; 
+      border-radius: 12px; 
+      display: block; 
+      margin: 15px auto;
+      border: 3px solid #97B342; /* Borde verde claro */
+    }
+
+    @media (max-width: 768px) { 
+      .wrapper-columnas { flex-direction: column; } 
     }
   </style>
 </head>
 <body>
 
-<header>
-  <nav style="background: #b25000; padding: 10px; margin-bottom: 20px;">
-  <a href="#sobre-mi" style="color: white; margin: 0 10px; text-decoration: none;">Sobre mí</a> | 
-  <a href="#intereses" style="color: white; margin: 0 10px; text-decoration: none;">Intereses</a> |
-  
-  <a href="blog.html" style="color: yellow; margin: 0 10px; font-weight: bold; text-decoration: none;">✨ IR AL BLOG (SpaceHey Style) ✨</a>
-</nav>
-  <h1>¡Bienvenido a Yoshisland!🌟</h1>
-  <p>Pa poner puras wbds jeje</p>
-  <img src="imagenes/laios.png" alt=" imagen del header">
-</header>
+  <nav class="navbar">
+    <a href="#intereses">INTERESES</a>
+    <a href="#cositas">COSITAS</a>
+    <a href="blog.html" style="color: #97B342;">✨ MI BLOG ✨</a>
+  </nav>
 
-<section id="sobre-mi">
-  <h2>Sobre mí</h2>
-  <p>Hola, soy Yoshi jeje. y pues yo este jeje.</p>
-  <img src="imagenes/camaron.png" alt="Mi foto personal">
+  <div class="container">
+    
+    <h1 class="main-title">¡Bienvenido a Yoshisland!</h1>
 
-</section>
+    <div class="wrapper-columnas">
 
-<section id="intereses">
-  <h2>Mis intereses</h2>
-  <p>me gusta mi jeva, se llama Sergio jeje. </p>
-  <audio controls>
-    <source src="musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3" type="audio/mp3">
-  </audio>
-  <img src="imagenes/escarabajos enamoraos.jpg">
-  <p> tambien me gusta el salmon :D. </p>
-  <img src="imagenes/salmon.jpg">
-</section>
+      <aside class="columna-izq">
+        <section>
+          <h2>Perfil</h2>
+          <img src="imagenes/camaron.png">
+          <p><b>Nombre:</b> Yoshi</p>
+          <p><b>Mood:</b> Jeje jeje</p>
+          <hr style="border: 1px dashed #66972A;">
+          <p>Hola, soy Yoshi jeje. y pues yo este jeje.</p>
+        </section>
 
-<section id="cositas">
-  <h2>cositas</h2>
-  <p>idk aun we .</p>
-</section>
+        <section>
+          <h2>Status</h2>
+          <p>Online 🟢</p>
+          <p>Vistas: 1,234 👁️</p>
+        </section>
+      </aside>
 
-<footer>
-  y eso lol lmao muak :v.
-</footer>
+      <main class="columna-der">
+        <section id="intereses">
+          <h2>Mis intereses</h2>
+          <p>Me gusta mi jeva, se llama Sergio jeje. </p>
+          <audio controls style="width: 100%;">
+            <source src="musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3" type="audio/mp3">
+          </audio>
+          <img src="imagenes/escarabajos enamoraos.jpg">
+          <p>También me gusta el salmón :D.</p>
+          <img src="imagenes/salmon.jpg">
+        </section>
+
+        <section id="cositas">
+          <h2>Cositas</h2>
+          <p>idk aun we.</p>
+        </section>
+      </main>
+
+    </div> 
+  </div> 
+
+  <footer style="text-align: center; color: white; padding: 30px; font-size: 1.5em; text-shadow: 2px 2px #463F23;">
+    y eso lol lmao muak :v.
+  </footer>
 
 </body>
 </html>
