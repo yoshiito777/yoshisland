@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Yoshisland :3</title>
-  <link rel="icon" href="imagenes/favicon.jpeg" type="image/x-icon">
+  <link rel="icon" href="imagenes/favicon.jpeg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
@@ -81,7 +81,10 @@
       margin: 10px auto; 
     }
 
-    audio { width: 100%; margin: 15px 0; }
+    .btn-playlist:hover {
+      filter: brightness(1.1);
+      transform: scale(1.02);
+    }
 
     @media (max-width: 850px) {
       .wrapper-columnas { flex-direction: column; }
@@ -92,7 +95,7 @@
 <body>
 
   <nav class="navbar">
-    <a href="#intereses">INTERESES</a>
+    <a href="#intereses">ദ്ദി(˵ •̀ ᴗ - ˵ )</a>
     <a href="#cositas">COSITAS</a>
     <a href="blog.html" style="color: #97B342;">✨ MI BLOG ✨</a>
   </nav>
@@ -106,15 +109,18 @@
         <section>
           <h2>Perfil</h2>
           <img src="imagenes/camaron.png">
-          <p><b>Nombre:</b> Yoshi</p>
-          <p><b>Mood:</b> Jeje jeje</p>
-          <p>Hola, soy Yoshi jeje. y pues yo este jeje.</p>
+          <p>Holandas:D! Soy Yoshi!</p>
+          <p>Me gusta juegar bloblox. Mis animes favs son Fairy Tail y Dungeon Meshi :b Y mi artista fav es Mitski :3</p>
         </section>
 
-        <section>
-          <h2>Status</h2>
-          <p>Online 🟢</p>
-          <p>Vistas: 1,234 👁️</p>
+        <section id="guestbook">
+          <h2>pa q hablen chat </h2>
+          <marquee scrollamount="3" style="font-size: 0.8em; color: #468A65; margin-bottom: 10px; display: block;">
+            ¡Saluda aquí! ✨ Pasen a ver jeje
+          </marquee>
+          <div style="background: white; padding: 5px; border-radius: 10px; border: 2px dashed #66972A; overflow: hidden;">
+            <iframe src="https://www3.cbox.ws/box/?boxid=3551594&boxtag=quxlRC" width="100%" height="200" frameborder="0" scrolling="auto"></iframe>
+          </div>
         </section>
 
         <section style="text-align: center;">
@@ -126,22 +132,94 @@
 
       <main class="columna-der">
         <section id="intereses">
-          <h2>Mis intereses</h2>
+          <h2>ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧ ⋅˚₊‧ ଳ ‧₊˚ ⋅</h2>
           
-          <p>Me gusta mi jeva Sergio jeje.</p>
-          <audio controls>
-            <source src="musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3" type="audio/mp3">
-            Tu navegador no soporta audio.
-          </audio>
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            
+            <div style="flex: 1;">
+              <p style="font-size: 1em; margin: 10px 0;">Me gusta mi jeva Sergio jeje.</p>
+              <div style="text-align: center;">
+                <img src="imagenes/escarabajos enamoraos.jpg" style="width: 100%; height: 250px; object-fit: cover; border: 2px solid #E88B12; margin-top: 0;">
+                <p style="font-size: 1.1em; margin-top: 5px;">mi jevo y yo</p>
+                <img src="imagenes/minegroyyo.jpeg">
+              </div>
+            </div>
 
-          <img src="imagenes/escarabajos enamoraos.jpg">
-          <p>También el salmón :D</p>
-          <img src="imagenes/salmon.jpg">
+            <div style="flex: 1; display: flex; flex-direction: column;">
+              
+              <div style="background: #fdf6e3; border: 3px solid #E88B12; padding: 10px; border-radius: 10px; box-shadow: 4px 4px 0px #463F23; margin-bottom: 15px;">
+                <p style="font-size: 0.9em; margin: 0 0 5px 5px; color: #E88B12; font-weight: bold;"> ‧₊˚♪ 𝄞₊˚⊹ Playlist</p>
+                
+                <audio id="reproductor" controls style="width: 100%; height: 30px; margin-bottom: 10px;">
+                  <source src="musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3" type="audio/mp3">
+                </audio>
+
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <button class="btn-playlist" onclick="cambiarCancion('musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #E88B12; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left; transition: 0.2s;">
+                    💿 Accidentally In Love
+                  </button>
+                  
+                  <button class="btn-playlist" onclick="cambiarCancion('musica/The La\'s There she goes.mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #66972A; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left; transition: 0.2s;">
+                    💿 There she goes
+                  </button>
+
+                  <button class="btn-playlist" onclick="cambiarCancion('musica/Kiss Me.mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #94bae0; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left; transition: 0.2s;">
+                    💿 Kiss Me
+                  </button>
+                </div>
+              </div>
+
+              <div style="text-align: center;">
+                <img src="imagenes/loveblue.gif" style="width: 100%; height: 300px; object-fit: cover; border: none;">
+                <img src="imagenes/pescado.gif" style="width: 500px; margin-top: 10px;">
+                <img src="imagenes/pescado.gif" style="width: 500px; margin-top: 10px;">
+              </div>
+            </div>
+
+          </div>
+          
+          <img src="imagenes/pez.gif" style="width: 80%; margin: 20px auto;">
         </section>
 
         <section id="cositas">
-          <h2>Cositas</h2>
-          <p>idk aun we.</p>
+          <h2>𓆉 ⋆｡˚𓇼 ⋆｡˚𓆟</h2>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="imagenes/senshi_o_marcille.png" style="width: 120px; border-radius: 50%; border: 3px solid #66972A;">
+            <div>
+              <p><b>Menú del día:</b></p>
+              <ul style="font-size: 0.6em; list-style-type: '🍴 ';">
+                <li>
+                  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⣀⣄⣀⠄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⠏⢁⣴⣿⣿⣿⠃⣰⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠄⣆⠀⠀⢀⣼⣿⣿⡟⠀⣾⣿⣿⣿⡏⢰⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠀⣹⡆⠀⢸⣿⣿⣿⡇⢰⣿⣿⣿⣿⡇⣾⣿⣇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣶⣾⣿⣿⡿⠀⣿⣿⠀⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⠀⣿⡿⣿⣆⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣼⣿⡿⢰⣿⣿⣿⣿⡇⢸⣿⣿⣿⡿⢸⡟⠀⢸⣿⡆⠀
+⠀⠀⠀⠀⠀⠀⢠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣣⣾⣿⣿⠇⣼⣿⣿⣿⣿⠀⣼⣿⣿⣿⡇⢘⠃⠀⠀⣿⣷⠀
+⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣾⣿⣿⣿⡟⣸⣿⣿⣿⣿⡟⢀⣿⣿⣿⣿⠃⠀⠀⠀⠀⣿⣿⠄
+⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢟⣼⣿⣿⣿⣿⣿⠁⣼⣿⣿⣿⡿⠀⠀⠀⠀⢸⣿⣿⠀
+⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⣿⣿⣿⣿⠃⣼⣿⣿⣿⣿⠇⠀⠀⠀⢀⣿⣿⡟⠀
+⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢡⣾⣿⣿⣿⣿⡟⠀⠀⠀⢀⣾⣿⣿⠃⠀
+⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⠿⠛⠛⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣶⣿⣿⣿⣿⣿⠟⠀⠀⠀⣠⣿⣿⣿⠏⠀⠀
+⠀⠀⠀⠀⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⢀⣴⣾⣿⣿⣿⠋⠀⠀⠀
+⠀⠀⠀⠀⠸⡿⠋⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣋⣠⣴⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⣝⣿⣿⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⣰⣾⣿⣿⣿⣿⡿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⣿⡇⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣰⣿⣿⡇⠀⣠⣴⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣰⣿⣿⣿⣷⣾⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣼⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣼⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠜⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size: 0.9em; text-align: center; margin-top: 10px; color: #468A65;">
+            "¡Comer es vivir!" - Senshi
+          </p>
         </section>
       </main>
 
@@ -152,5 +230,12 @@
     y eso lol lmao muak :v.
   </footer>
 
+  <script>
+    function cambiarCancion(ruta) {
+      const audio = document.getElementById('reproductor');
+      audio.src = ruta;
+      audio.play();
+    }
+  </script>
 </body>
 </html>
