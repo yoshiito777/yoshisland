@@ -35,7 +35,7 @@
     .navbar a:hover { color: #E88B12; }
 
     .container { 
-      max-width: 1100px; 
+      max-width: 1350px; 
       margin: 0 auto; 
       padding: 20px; 
     }
@@ -50,12 +50,13 @@
 
     .wrapper-columnas { 
       display: flex; 
-      gap: 25px; 
+      gap: 20px; 
       align-items: flex-start;
     }
 
-    .columna-izq { flex: 0 0 350px; }
-    .columna-der { flex: 1; }
+    .col-lateral-izq { flex: 0 0 320px; }
+    .col-centro { flex: 1.2; min-width: 0; } 
+    .col-lateral-der { flex: 0 0 320px; }
 
     section {
       background-color: rgba(255, 255, 255, 0.9);
@@ -86,22 +87,21 @@
       transform: scale(1.02);
     }
 
-    /* Estilo para el ASCII sin el cuadro naranja */
     pre {
       font-family: monospace;
       font-size: 8px;
       line-height: 8px;
-      background: transparent; /* Quitamos el fondo */
+      background: transparent;
       padding: 10px;
-      border: none; /* Quitamos el borde naranja */
+      border: none;
       overflow-x: auto;
       margin: 10px 0;
       color: #222;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 1000px) {
       .wrapper-columnas { flex-direction: column; }
-      .columna-izq { flex: 1 1 100%; width: 100%; }
+      .col-lateral-izq, .col-centro, .col-lateral-der { flex: 1 1 100%; width: 100%; }
     }
   </style>
 </head>
@@ -118,7 +118,7 @@
 
     <div class="wrapper-columnas">
       
-      <aside class="columna-izq">
+      <aside class="col-lateral-izq">
         <section>
           <h2>Perfil</h2>
           <img src="imagenes/camaron.png">
@@ -135,16 +135,9 @@
             <iframe src="https://www3.cbox.ws/box/?boxid=3551594&boxtag=quxlRC" width="100%" height="200" frameborder="0" scrolling="auto"></iframe>
           </div>
         </section>
-
-        <section style="text-align: center;">
-          <h2>Frijol el Cactus</h2>
-          <iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Frijol&dob=1768692904&gender=b&element=Air&pet=cactus.gif&map=tree.jpg&background=gify.jpg&tablecolor=black&textcolor=black" frameborder="0"></iframe>
-          <p style="font-size: 0.8em; margin-top: 10px;">¡Cuida mucho a Frijol! 🌵</p>
-        </section>
       </aside>
 
-      <main class="columna-der">
-        
+      <main class="col-centro">
         <section id="cositas">
           <h2>𓆉 ⋆｡˚𓇼 ⋆｡˚𓆟</h2>
           <div style="display: flex; align-items: center; gap: 15px;">
@@ -153,91 +146,80 @@
               <p><b>Menú del día:</b></p>
             </div>
           </div>
-          <pre>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⣀⣄⣀⠄⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⠏⢁⣴⣿⣿⣿⠃⣰⡇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠄⣆⠀⠀⢀⣼⣿⣿⡟⠀⣾⣿⣿⣿⡏⢰⣿⡇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠀⣹⡆⠀⢸⣿⣿⣿⡇⢰⣿⣿⣿⣿⡇⣾⣿⣇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣶⣾⣿⣿⡿⠀⣿⣿⠀⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⠀⣿⡿⣿⣆⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣼⣿⡿⢰⣿⣿⣿⣿⡇⢸⣿⣿⣿⡿⢸⡟⠀⢸⣿⡆⠀
-⠀⠀⠀⠀⠀⠀⢠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣣⣾⣿⣿⠇⣼⣿⣿⣿⣿⠀⣼⣿⣿⣿⡇⢘⠃⠀⠀⣿⣷⠀
-⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣾⣿⣿⣿⡟⣸⣿⣿⣿⣿⡟⢀⣿⣿⣿⣿⠃⠀⠀⠀⠀⣿⣿⠄
-⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢟⣼⣿⣿⣿⣿⣿⠁⣼⣿⣿⣿⡿⠀⠀⠀⠀⢸⣿⣿⠀
-⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⣿⣿⣿⣿⠃⣼⣿⣿⣿⣿⠇⠀⠀⠀⢀⣿⣿⡟⠀
-⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢡⣾⣿⣿⣿⣿⡟⠀⠀⠀⢀⣾⣿⣿⠃⠀
-⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⠿⠛⠛⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣶⣿⣿⣿⣿⣿⠟⠀⠀⠀⣠⣿⣿⣿⠏⠀⠀
-⠀⠀⠀⠀⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⢀⣴⣾⣿⣿⣿⠋⠀⠀⠀
-⠀⠀⠀⠀⠸⡿⠋⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣋⣠⣴⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⣝⣿⣿⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⣰⣾⣿⣿⣿⣿⡿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢠⣿⡇⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣰⣿⣿⡇⠀⣠⣴⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⣰⣿⣿⣿⣷⣾⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⣼⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⣼⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠜⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+          <pre> (Pega aquí tu ASCII del pez) </pre>
           <p style="font-size: 0.9em; text-align: center; margin-top: 10px; color: #468A65;">
             "¡Comer es vivir!" - Senshi
           </p>
         </section>
 
+
+<main class="col-centro">
+
+
+    <img src="imagenes/keroppi.gif" style="width: 90%; height: auto; margin: 10px auto; display: block; border: none; box-shadow: none;">
+
+  
+</main>
+
         <section id="intereses">
           <h2>ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧ ⋅˚₊‧ ଳ ‧₊˚ ⋅</h2>
-          
           <div style="display: flex; gap: 20px; align-items: flex-start;">
-            
             <div style="flex: 1;">
               <p style="font-size: 1em; margin: 10px 0;">Me gusta mi jeva Sergio jeje.</p>
               <div style="text-align: center;">
-                <img src="imagenes/escarabajos enamoraos.jpg" style="width: 100%; height: 250px; object-fit: cover; border: 2px solid #E88B12; margin-top: 0;">
+                <img src="imagenes/escarabajos enamoraos.jpg" style="width: 100%; height: 250px; object-fit: cover; border: 2px solid #E88B12;">
                 <p style="font-size: 1.1em; margin-top: 5px;">mi jevo y yo</p>
                 <img src="imagenes/minegroyyo.jpeg">
               </div>
             </div>
 
             <div style="flex: 1; display: flex; flex-direction: column;">
-              
               <div style="background: #fdf6e3; border: 3px solid #E88B12; padding: 10px; border-radius: 10px; box-shadow: 4px 4px 0px #463F23; margin-bottom: 15px;">
                 <p style="font-size: 0.9em; margin: 0 0 5px 5px; color: #E88B12; font-weight: bold;"> ‧₊˚♪ 𝄞₊˚⊹ Playlist</p>
-                
                 <audio id="reproductor" controls style="width: 100%; height: 30px; margin-bottom: 10px;">
                   <source src="musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3" type="audio/mp3">
                 </audio>
-
                 <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <button class="btn-playlist" onclick="cambiarCancion('musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #E88B12; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left; transition: 0.2s;">
-                    💿 Accidentally In Love
-                  </button>
-                  <button class="btn-playlist" onclick="cambiarCancion('musica/The La\'s There she goes.mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #66972A; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left; transition: 0.2s;">
-                    💿 There she goes
-                  </button>
-                  <button class="btn-playlist" onclick="cambiarCancion('musica/Kiss Me.mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #94bae0; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left; transition: 0.2s;">
-                    💿 Kiss Me
-                  </button>
+                  <button class="btn-playlist" onclick="cambiarCancion('musica/Accidentally In Love (From Shrek 2 Soundtrack).mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #E88B12; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left;">💿 Accidentally In Love</button>
+                  <button class="btn-playlist" onclick="cambiarCancion('musica/The La\'s There she goes.mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #66972A; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left;">💿 There she goes</button>
+                  <button class="btn-playlist" onclick="cambiarCancion('musica/Kiss Me.mp3')" style="font-family: 'Gaegu'; cursor: pointer; background: #94bae0; color: white; border: none; border-radius: 5px; padding: 6px; font-size: 0.7em; text-align: left;">💿 Kiss Me</button>
                 </div>
               </div>
-
               <div style="text-align: center;">
-                <img src="imagenes/loveblue.gif" style="width: 100%; height: 300px; object-fit: cover; border: none;">
+                <img src="imagenes/loveblue.gif" style="width: 100%; height: 300px; object-fit: cover;">
                 <img src="imagenes/pescado.gif" style="width: 500px; display: inline-block; margin: 5px;">
                 <img src="imagenes/pescado.gif" style="width: 500px; display: inline-block; margin: 5px;">
               </div>
             </div>
-
           </div>
-          
           <img src="imagenes/pez.gif" style="width: 80%; margin: 20px auto;">
         </section>
       </main>
+
+      <aside class="col-lateral-der">
+        <section>
+          <h2>Cositas Extra ✨</h2>
+          <img src="imagenes/ventanitaazul.gif" style="width: 80%;">
+          <img src="imagenes/pinkfluflyunicorn.png" style="width: 50%;">
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center;">
+            <span style="font-size: 1.5em;">🐚 🍡 🌸</span>
+          </div>
+        </section>
+
+        <section style="text-align: center;">
+          <h2>Frijol el Cactus</h2>
+          <div style="overflow: hidden; border-radius: 10px;">
+            <iframe width="314" height="340" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Frijol&dob=1768692904&gender=b&element=Air&pet=cactus.gif&map=tree.jpg&background=gify.jpg&tablecolor=black&textcolor=black" frameborder="0"></iframe>
+          </div>
+          <p style="font-size: 0.8em; margin-top: 10px;">¡Cuida mucho a Frijol! 🌵</p>
+        </section>
+      </aside>
 
     </div> 
   </div>
 
   <footer style="text-align: center; color: white; padding: 30px; text-shadow: 2px 2px #463F23;">
-    y eso lol lmao muak :v.
+    Yoshi Blog 2026 © - Hecho con amor y hambre. 𓆉 ⋆.˚
   </footer>
 
   <script>

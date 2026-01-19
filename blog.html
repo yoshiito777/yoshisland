@@ -9,11 +9,9 @@
     <style>
         /* --- FONDO DE LA PÁGINA --- */
         body {
-            /* Puedes cambiar este link por una imagen de tu carpeta ej: url('imagenes/fondo.jpg') */
-        background-image: url('./imagenes/fondo2.jpeg');
-
-        
+            background-image: url('./imagenes/fondo2.jpeg');
             background-size: cover;
+            background-attachment: fixed;
             font-family: 'Gaegu', cursive;
             margin: 0;
             color: #222;
@@ -46,16 +44,16 @@
 
         /* --- COLUMNA IZQUIERDA (Perfil) --- */
         .left-col {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.9); /* Blanco con transparencia */
-            border: 1px solid #0366d6;
+            flex: 0 0 250px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #0366d6;
+            box-shadow: 3px 3px 0px #000;
             padding: 15px;
             text-align: center;
             height: fit-content;
         }
-        .left-col img { 
+        .left-col img.profile-pic { 
             width: 100%; 
-            max-width: 180px;
             border: 1px solid #ccc;
             padding: 3px;
             background: white;
@@ -63,41 +61,90 @@
         .status-box {
             border: 1px solid #999;
             margin: 10px 0;
-            padding: 5px;
+            padding: 8px;
             font-size: 0.9em;
             background: #fdfdfd;
+            text-align: center;
+        }
+
+        /* SECCIÓN AMIGOS */
+        .friends-header {
+            background: #b9d4ec;
+            color: #0366d6;
+            font-weight: bold;
+            padding: 3px;
+            margin-top: 15px;
+            border: 1px solid #0366d6;
+        }
+        .friends-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 5px 0;
+        }
+        .friend-item {
+            font-size: 1em;
+            text-align: center;
+            text-decoration: none;
+            color: #0366d6;
+        }
+        .friend-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid #ccc;
         }
 
         /* --- COLUMNA DERECHA (Posts del Blog) --- */
         .right-col {
-            flex: 2;
+            flex: 1;
         }
 
         .blog-post {
-            background: rgba(255, 255, 255, 0.9); /* Transparencia para que se vea el fondo */
-            border: 1px solid #0366d6;
-            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #0366d6;
+            box-shadow: 3px 3px 0px #000;
+            margin-bottom: 25px;
             overflow: hidden;
         }
 
         .blog-header {
-            background: #b9d4ec; /* Azul clarito */
-            padding: 8px 15px;
+            background: #b9d4ec;
+            padding: 10px 15px;
             font-weight: bold;
             color: #0366d6;
-            border-bottom: 1px solid #0366d6;
+            border-bottom: 2px solid #0366d6;
+            display: flex;
+            justify-content: space-between;
         }
 
         .blog-content { 
             padding: 15px; 
-            font-size: 1.1em;
-            line-height: 1.4;
+            font-size: 1.2em;
+            line-height: 1.5;
         }
 
-        /* --- RESPONSIVO (Para celulares) --- */
-        @media (max-width: 600px) {
+        .blog-footer {
+            padding: 5px 15px;
+            background: #f0f0f0;
+            font-size: 0.8em;
+            border-top: 1px solid #ccc;
+            color: #666;
+        }
+
+        /* REPRODUCTOR MINI */
+        .music-box {
+            background: #eee;
+            border: 1px solid #999;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 700px) {
             .container { flex-direction: column; }
-            .left-col { order: 2; }
+            .left-col { width: 100%; order: 2; }
             .right-col { order: 1; }
         }
     </style>
@@ -106,49 +153,119 @@
 
     <nav class="navbar">
         <a href="index.html">INICIO</a>
-        <a href="index.html#sobre-mi">SOBRE MÍ</a>
         <a href="index.html#intereses">INTERESES</a>
+        <a href="blog.html" style="text-decoration: underline;">MI BLOG</a>
     </nav>
 
     <div class="container">
         
-        <aside class="left-col">
-            <h2>Yoshiito777</h2>
-            <img src="imagenes/laios.png" alt="Mi Foto">
-            
-            <div class="status-box">
-                <b>Estado:</b> "Haciendo mi blog jeje 🦖"
-            </div>
+       <aside class="left-col">
+    <h2>Yoshiito777</h2>
+    <img src="imagenes/happy.jpeg" alt="Mi Foto" class="profile-pic">
+    
+    <div class="status-box">
+        <b>Estado:</b> "Haciendo mi blog jeje 🦖"
+    </div>
 
-            <p style="text-align: left;">
-                <b>Vistas:</b> 1,234<br>
-                <b>Ubicación:</b> Yoshisland<br>
-                <b>Mood:</b> Hambriento 🍣
-            </p>
-            <hr>
-            <h3>Amigos</h3>
-            <p>¡Próximamente!</p>
-        </aside>
+    <div style="text-align: left; font-size: 0.9em;">
+        <p><b>Ubicación:</b> Yoshisland<br>
+        <b>Mood:</b> Con hambre 🍣<br>
+    </div>
+
+    <div class="music-box">
+        <b>Yoshi's Playlist ♫</b><br>
+        <audio id="reproductor-blog" controls style="width: 100%; height: 25px; margin-top: 5px; margin-bottom: 8px;">
+            <source src="musica/Hatachi No Koi.mp3" type="audio/mp3">
+        </audio>
+        
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+            <button onclick="playBlog('musica/HatachiNoKoi.mp3')" 
+                    style="font-family: 'Gaegu'; font-size: 1em; cursor: pointer; background: #b9d4ec; border: 1px solid #0366d6; color: #0366d6; border-radius: 3px; padding: 2px;">
+                🐋 Hatachi No Koi
+            </button>
+            <button onclick="playBlog('musica/TICTAC.mp3')" 
+                    style="font-family: 'Gaegu'; font-size: 1em; cursor: pointer; background: #b9d4ec; border: 1px solid #0366d6; color: #0366d6; border-radius: 3px; padding: 2px;">
+                🌙 TICTAC
+            </button>
+            <button onclick="playBlog('musica/GarotaDeIpanema.mp3')" 
+                    style="font-family: 'Gaegu'; font-size: 1em; cursor: pointer; background: #b9d4ec; border: 1px solid #0366d6; color: #0366d6; border-radius: 3px; padding: 2px;">
+                🐚 GarotaDeIpanema
+            </button>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="friends-header">Mis Amigos</div>
+    <div class="friends-grid">
+        <div class="friend-item">
+            <img src="imagenes/Piedra.jpeg">
+            <br>Piedrina
+        </div>
+        <div class="friend-item">
+            <img src="imagenes/Leon S Kennedy.jpeg">
+            <br>Jojao
+        </div>
+        <div class="friend-item">
+            <img src="imagenes/hamsterian.jpeg">
+            <br>TilIan
+        </div>
+        <div class="friend-item">
+            <img src="imagenes/shoto.jpeg">
+            <br>Anifacia
+        </div>
+    </div>
+</aside>
 
         <main class="right-col">
             
             <div class="blog-post">
-                <div class="blog-header">17 de Enero - ¡Logré el fondo de imagen!</div>
+                <div class="blog-header">
+                    <span>✨ Nueva actualización del diseño</span>
+                    <small>18/01/2026</small>
+                </div>
                 <div class="blog-content">
-                    <p>jejejejejje poco a poco va tomando forma esta monda jejejjejeje. </p>
-                    <p>faltan cosas pero con calma .</p>
+                    <p>¡Hola! He añadido una sección de amigos y he mejorado los bordes para que parezcan mas algo. Poco a poco va quedando más mejol.</p>
+                    <p>Comí piña riko. :v</p>
+                    <img src="imagenes/pezpescera.gif" style="width: 500px; display: block; margin: 0 auto;">
                 </div>
             </div>
 
             <div class="blog-post">
-                <div class="blog-header">Pensamiento del momento</div>
+                <div class="blog-header">
+                    <span>17 de Enero - ¡Logré el fondo!</span>
+                    <small>17/01/2026</small>
+                </div>
+                <div class="blog-content">
+                    <p>jejejejejje poco a poco va tomando forma esta monda jejejjejeje.</p>
+                    <p>faltan cosas pero con calma. El fondo quedó muy bonito.</p>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-header">
+                    <span>Pensamiento del momento</span>
+                    <small>17/01/2026</small>
+                </div>
                 <div class="blog-content">
                     <p>lmao muak :v</p>
                 </div>
+                
             </div>
 
         </main>
     </div>
+
+    <footer style="text-align: center; padding: 20px; color: white; text-shadow: 1px 1px #000;">
+        Yoshi Blog 2026 © - Hecho con amor y hambre. 𓆉 ⋆.˚
+    </footer>
+<script>
+        function playBlog(ruta) {
+            const audio = document.getElementById('reproductor-blog');
+            audio.src = ruta;
+            audio.play();
+        }
+    </script>
 
 </body>
 </html>
